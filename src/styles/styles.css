@@ -1,5 +1,6 @@
 /* PROJECT VARIABLES */
 :root {
+  --green: #9ebc8a;
 }
 
 /* CSS RESET */
@@ -57,4 +58,140 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+}
+
+/* CUSTOM CSS */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: normal;
+}
+
+/* ABOUT ME SECTION  */
+.about-me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-img {
+  padding: 40px 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(145deg, var(--green) 55%, white 58%);
+}
+
+.img-inner {
+  position: relative;
+}
+
+.name {
+  position: absolute;
+  bottom: 0;
+  left: 24px;
+  color: white;
+  font-size: 5rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.about-me p {
+  padding: 0 24px;
+}
+
+.icons {
+  display: flex;
+  gap: 40px;
+  padding: 10px;
+}
+
+.icons svg {
+  width: 48px;
+  fill: var(--green);
+}
+
+/* PROJECTS SECTION  */
+.my-work {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+}
+
+.projects-container {
+  display: grid;
+  gap: 80px;
+  grid-template-columns: repeat(auto-fit, min-max(300px, 1fr));
+}
+
+/* INDIVIDUAL PROJECT  */
+.project-item {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+}
+
+.project-name-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.project-name-links h3 {
+  padding-left: 40px;
+}
+
+.project-name-links svg {
+  width: 36px;
+}
+
+.links {
+  display: flex;
+  gap: 12px;
+  padding-right: 20px;
+}
+
+.project-item p {
+  padding: 0 20px 40px;
+}
+
+/* CONTACT SECTION  */
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 40px 20px 80px;
+  background-color: var(--green);
+  color: white;
+}
+
+.info-section > p:first-of-type {
+  font-weight: bold;
+  font-size: clamp(1.3rem, 2vw, 3rem);
+}
+
+.contact h1 {
+  align-self: center;
+}
+
+.contact p {
+  font-size: clamp(1.2rem, 2vw, 3rem);
+}
+
+.contact .icons {
+  align-self: center;
+}
+
+.contact img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
