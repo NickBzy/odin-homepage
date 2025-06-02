@@ -61,6 +61,16 @@ h6 {
 }
 
 /* CUSTOM CSS */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -68,12 +78,18 @@ h6 {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: clamp(3rem, 3vw, 6rem);
   font-weight: normal;
 }
 
 /* ABOUT ME SECTION  */
 .about-me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-me-desc {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -127,8 +143,9 @@ h1 {
 
 .projects-container {
   display: grid;
+  width: 100%;
   gap: 80px;
-  grid-template-columns: repeat(auto-fit, min-max(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 /* INDIVIDUAL PROJECT  */
@@ -136,7 +153,7 @@ h1 {
   display: flex;
   gap: 12px;
   flex-direction: column;
-  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .project-name-links {
@@ -175,7 +192,7 @@ h1 {
 
 .info-section > p:first-of-type {
   font-weight: bold;
-  font-size: clamp(1.3rem, 2vw, 3rem);
+  font-size: clamp(1.3rem, 2vw, 2rem);
 }
 
 .contact h1 {
@@ -183,7 +200,7 @@ h1 {
 }
 
 .contact p {
-  font-size: clamp(1.2rem, 2vw, 3rem);
+  font-size: clamp(1.2rem, 2vw, 2rem);
 }
 
 .contact .icons {
@@ -194,4 +211,118 @@ h1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* TABLET VIEW  */
+@media (min-width: 640px) {
+  .about-me {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: linear-gradient(170deg, var(--green) 58%, white 58%);
+  }
+
+  .about-me-desc {
+    position: relative;
+    flex: 0 1 400px;
+    background-color: white;
+  }
+
+  .about-me .profile-img {
+    position: absolute;
+    flex: 0 1 200px;
+  }
+}
+
+/* DESKTOP  */
+@media (min-width: 1024px) {
+  /* ABOUT ME SECTION  */
+  .about-me {
+    align-items: center;
+    padding: 80px;
+  }
+
+  .about-me-desc {
+    padding: 40px 40px 0;
+    flex: 1 1 700px;
+    height: auto;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .about-me-desc h1 {
+    align-self: flex-start;
+  }
+
+  .about-me p {
+    padding: 20px 0 30px;
+  }
+
+  .about-me .icons {
+    padding: 0 0 20px;
+  }
+
+  .about-me-desc .icons {
+    align-self: flex-end;
+  }
+
+  .about-me .profile-img {
+    z-index: 1;
+    position: static;
+    flex: 0 0 450px;
+    background: none;
+    padding: 0;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .about-me .profile-img img {
+    width: 450px;
+    height: 450px;
+  }
+
+  /* PROJECTS SECTION  */
+  .my-work {
+    padding: 80px;
+  }
+
+  .my-work h1 {
+    align-self: flex-start;
+  }
+
+  .project-item p {
+    padding: 0 40px 40px;
+  }
+
+  /* CONTACT SECTION  */
+  .contact {
+    display: flex;
+    gap: 200px;
+    padding: 100px 100px 200px;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--green);
+  }
+
+  .contact .info-section {
+    padding: 0;
+  }
+
+  .contact h1 {
+    align-self: flex-start;
+  }
+
+  .contact .icons {
+    align-self: flex-start;
+  }
+
+  .contact img {
+    width: clamp(400px, 40vw, 600px);
+  }
+}
+
+/* ANIMATION  */
+.about-me,
+.about-me-desc,
+.profile-img,
+.profile-img img {
+  transition: all 0.3s ease-in-out;
 }
