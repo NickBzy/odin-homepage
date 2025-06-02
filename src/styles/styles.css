@@ -1,6 +1,7 @@
 /* PROJECT VARIABLES */
 :root {
   --green: #9ebc8a;
+  --blue: #0a66c2;
 }
 
 /* CSS RESET */
@@ -82,6 +83,15 @@ h1 {
   font-weight: normal;
 }
 
+svg {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+svg:hover {
+  transform: scale(1.1);
+}
+
 /* ABOUT ME SECTION  */
 .about-me {
   display: flex;
@@ -138,6 +148,14 @@ h1 {
   fill: var(--green);
 }
 
+.icons svg:nth-child(1):hover {
+  fill: black;
+}
+
+.icons svg:nth-child(2):hover {
+  fill: var(--blue);
+}
+
 /* PROJECTS SECTION  */
 .my-work {
   display: flex;
@@ -175,6 +193,10 @@ h1 {
   width: 36px;
 }
 
+.project-name-links svg:hover {
+  fill: var(--green);
+}
+
 .links {
   display: flex;
   gap: 12px;
@@ -202,6 +224,15 @@ h1 {
 
 .contact h1 {
   align-self: center;
+}
+
+.contact-info svg {
+  width: 32px;
+  cursor: default;
+}
+
+.contact-info svg:hover {
+  transform: scale(1);
 }
 
 .contact p {
